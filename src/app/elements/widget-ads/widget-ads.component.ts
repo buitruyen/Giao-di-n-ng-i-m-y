@@ -1,15 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'app-widget-ads',
+    selector: '[app-widget-ads]',
     templateUrl: 'widget-ads.component.html'
 })
 export class WidgetAdsComponent implements OnInit {
+    @Input("app-widget-ads") position: string;
+
     constructor() {
     }
 
     ngOnInit(): void {
-        console.log("WidgetAdsComponent");
+        console.log(this.position);
     }
 
 }
