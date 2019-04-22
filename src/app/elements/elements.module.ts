@@ -11,6 +11,8 @@ import {WidgetFeaturedVideoComponent} from "./widget-featured-video/widget-featu
 import {WidgetPopularVideoComponent} from "./widget-popular-video/widget-popular-video.component";
 import {WidgetContactComponent} from "./widget-contact/widget-contact.component";
 import {WidgetFacebookComponent} from "./widget-facebook/widget-facebook.component";
+import {WidgetCopyrightComponent} from "./widget-copyright/widget-copyright.component";
+import {WidgetMenuBottomComponent} from "./widget-menu-bottom/widget-menu-bottom.component";
 
 @NgModule({
     imports: [
@@ -27,7 +29,9 @@ import {WidgetFacebookComponent} from "./widget-facebook/widget-facebook.compone
         WidgetFeaturedVideoComponent,
         WidgetPopularVideoComponent,
         WidgetContactComponent,
-        WidgetFacebookComponent
+        WidgetFacebookComponent,
+        WidgetCopyrightComponent,
+        WidgetMenuBottomComponent
 
     ],
     providers: [],
@@ -42,7 +46,9 @@ import {WidgetFacebookComponent} from "./widget-facebook/widget-facebook.compone
         WidgetFeaturedVideoComponent,
         WidgetPopularVideoComponent,
         WidgetContactComponent,
-        WidgetFacebookComponent
+        WidgetFacebookComponent,
+        WidgetCopyrightComponent,
+        WidgetMenuBottomComponent
     ]
 })
 export class ElementsModule {
