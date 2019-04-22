@@ -7,6 +7,7 @@ import {WidgetBannerComponent} from "./widget-banner/widget-banner.component";
 import {WidgetMenuMainComponent} from "./widget-menu-main/widget-menu-main.component";
 import {ElmHeaderComponent} from "./elm-header/elm-header.component";
 import {WidgetPlaylistComponent} from "./widget-playlist/widget-playlist.component";
+import {WidgetFeaturedVideoComponent} from "./widget-featured-video/widget-featured-video.component";
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import {WidgetPlaylistComponent} from "./widget-playlist/widget-playlist.compone
         WidgetBannerComponent,
         WidgetMenuMainComponent,
         ElmHeaderComponent,
-        WidgetPlaylistComponent
+        WidgetPlaylistComponent,
+        WidgetFeaturedVideoComponent
 
     ],
     providers: [],
@@ -30,7 +32,8 @@ import {WidgetPlaylistComponent} from "./widget-playlist/widget-playlist.compone
         WidgetBannerComponent,
         WidgetMenuMainComponent,
         ElmHeaderComponent,
-        WidgetPlaylistComponent
+        WidgetPlaylistComponent,
+        WidgetFeaturedVideoComponent
     ]
 })
 export class ElementsModule {
