@@ -4,6 +4,7 @@ import {WidgetAdsComponent} from "./widget-ads/widget-ads.component";
 import {WidgetSocialComponent} from "./widget-social/widget-social.component";
 import {WidgetMenuTopComponent} from "./widget-menu-top/widget-menu-top.component";
 import {WidgetBannerComponent} from "./widget-banner/widget-banner.component";
+import {WidgetMenuMainComponent} from "./widget-menu-main/widget-menu-main.component";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import {WidgetBannerComponent} from "./widget-banner/widget-banner.component";
         WidgetAdsComponent,
         WidgetSocialComponent,
         WidgetMenuTopComponent,
-        WidgetBannerComponent
+        WidgetBannerComponent,
+        WidgetMenuMainComponent
 
     ],
     providers: [],
@@ -21,7 +23,8 @@ import {WidgetBannerComponent} from "./widget-banner/widget-banner.component";
         WidgetAdsComponent,
         WidgetSocialComponent,
         WidgetMenuTopComponent,
-        WidgetBannerComponent
+        WidgetBannerComponent,
+        WidgetMenuMainComponent
     ]
 })
 export class ElementsModule {
