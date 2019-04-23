@@ -26,13 +26,29 @@ export class TrainingComponent implements OnInit {
         // promise.then(_ => console.log('success'))
         //     .catch(err => console.log(err, 'You dont have access!'));
         //Save
-        const itemRefSave = db.object('items/abc');
-        itemRefSave.set({id:123, name: 'php'});
+        // const itemRefSave = db.object('items/abc');
+        // itemRefSave.set({id:123, name: 'php'});
 
         //Updating data
-        const itemRefUpdate = db.object('items/abc');
-        itemRefUpdate.update({ id: 150 });
-        
+        // const itemRefUpdate = db.object('items/abc');
+        // itemRefUpdate.update({ id: 150 });
+
+
+
+
+        //=============================================
+        //Thêm dữ liệu
+        // const itemsRef = db.list('items');
+        // itemsRef.push({ name: 'abc',id:123 });
+
+        //Cập nhật
+        // const itemsRef = db.list('items');
+        // itemsRef.update('Ld9x1ze84mTUuGHPu6m', { name: "abc1234" });
+
+        //Xóa
+        const itemsRef = db.list('items');
+        itemsRef.remove();
+
     }
 
     ngOnInit(): void {
