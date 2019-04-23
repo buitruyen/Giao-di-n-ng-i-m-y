@@ -9,13 +9,13 @@ import {FirebaseListObservable, FirebaseObjectObservable} from "@angular/fire/da
 })
 export class TrainingComponent implements OnInit {
 
-    items: FirebaseListObservable<any[]>;
-    item: FirebaseObjectObservable<any>;
+    private items: FirebaseListObservable<any[]>;
+    private item: FirebaseObjectObservable<any>;
 
     constructor(db: AngularFireDatabase) {
         //Hiện thị
-        this.items = db.list('/items').valueChanges();
-
+        this.items = db.list('/items', ref => ref.orderByChild('ordering').equalTo(2)).valueChanges();
+        
         this.item = db.object('/items/course2').valueChanges();
         this.items.subscribe(valueOfItems => {
             console.log(valueOfItems);
@@ -34,20 +34,25 @@ export class TrainingComponent implements OnInit {
         // itemRefUpdate.update({ id: 150 });
 
 
-
-
         //=============================================
         //Thêm dữ liệu
         // const itemsRef = db.list('items');
-        // itemsRef.push({ name: 'abc',id:123 });
+        // itemsRef.push({ id: 123,name:"angular",ordering:1 });
+        // itemsRef.push({ id: 124,name:"php",ordering:2 });
+        // itemsRef.push({ id: 125,name:"java",ordering:2 });
+        // itemsRef.push({ id: 126,name:"c#",ordering:4 });
 
         //Cập nhật
         // const itemsRef = db.list('items');
         // itemsRef.update('Ld9x1ze84mTUuGHPu6m', { name: "abc1234" });
 
         //Xóa
-        const itemsRef = db.list('items');
-        itemsRef.remove();
+        // const itemsRef = db.list('items');
+        // itemsRef.remove();
+
+
+        // ===========================================
+
 
     }
 
