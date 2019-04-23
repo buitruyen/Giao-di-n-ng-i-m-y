@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: '[app-elm-panel-title]',
@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ElmPanelTitleComponent implements OnInit {
     @Input("app-elm-panel-title") title: string = null;
     @Input('layout') layout: string;
-
+    @Output("myLayout") myLayout = new EventEmitter<string>();
 
     ngOnInit(): void {
         console.log(this.layout);
@@ -17,6 +17,12 @@ export class ElmPanelTitleComponent implements OnInit {
         return {
             active: (layout == this.layout)
         }
+    }
+
+    setLayout(layout: string) {
+        this.layout = layout;
+        this.myLayout.emit(layout);
+        return false;
     }
 
 }

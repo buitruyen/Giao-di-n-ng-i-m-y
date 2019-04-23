@@ -87,13 +87,13 @@
 		});
 
 
-		// Video set layout
-		jQuery("a[href='#v-set-layout']").click(function(){
-			var element = jQuery(this);
-			element.addClass("active").siblings(".active").removeClass("active");
-			element.parent().parent().siblings(".panel-block").attr("class", "panel-block video-list").addClass(element.attr("rel"));
-			return false;
-		});
+		// // Video set layout
+		// jQuery("a[href='#v-set-layout']").click(function(){
+		// 	var element = jQuery(this);
+		// 	element.addClass("active").siblings(".active").removeClass("active");
+		// 	element.parent().parent().siblings(".panel-block").attr("class", "panel-block video-list").addClass(element.attr("rel"));
+		// 	return false;
+		// });
 
 
 		// Orange-Themes HTML5 Video Player

@@ -12,4 +12,7 @@ export class ElmPlaylistComponent implements OnInit {
     ngOnInit() {
     }
 
+    changeLayout(event: any) {
+        this.layout = event;
+    }
 }

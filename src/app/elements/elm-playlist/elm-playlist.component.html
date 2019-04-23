@@ -3,6 +3,7 @@
     <div class="panel-title"
          [app-elm-panel-title]="title"
          [layout]="layout"
+         (myLayout)="changeLayout($event)"
     ></div>
     <div class="panel-block video-list {{layout}}">
         <!--ELEMENT  VIDEO 1-->
