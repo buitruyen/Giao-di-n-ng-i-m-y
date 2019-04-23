@@ -1,12 +1,17 @@
 <div class="content-panel">
     <!--ELEMENT PANEL TITLE-->
-    <div class="panel-title" [app-elm-panel-title]="title"></div>
-
-    <div class="panel-block video-list grid">
+    <div class="panel-title"
+         [app-elm-panel-title]="title"
+         [layout]="layout"
+    ></div>
+    <div class="panel-block video-list {{layout}}">
         <!--ELEMENT  VIDEO 1-->
         <div class="item" app-elm-video show-desc="true"></div>
         <!--ELEMENT  VIDEO 2-->
         <div class="item" app-elm-video show-desc="true"></div>
+        <!--ELEMENT  VIDEO 3-->
+        <div class="item" app-elm-video show-desc="true"></div>
+
         <div class="clear-list-button">
             <a href="#" class="back-button">View More Videos</a>
         </div>
