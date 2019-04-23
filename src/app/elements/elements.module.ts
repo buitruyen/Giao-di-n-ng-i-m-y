@@ -13,6 +13,9 @@ import {WidgetContactComponent} from "./widget-contact/widget-contact.component"
 import {WidgetFacebookComponent} from "./widget-facebook/widget-facebook.component";
 import {WidgetCopyrightComponent} from "./widget-copyright/widget-copyright.component";
 import {WidgetMenuBottomComponent} from "./widget-menu-bottom/widget-menu-bottom.component";
+import {ElmFooterTopComponent} from "./elm-footer-top/elm-footer-top.component";
+import {ElmFooterBottomComponent} from "./elm-footer-bottom/elm-footer-bottom.component";
+import {ElmFooterComponent} from "./elm-footer/elm-footer.component";
 
 @NgModule({
     imports: [
@@ -31,7 +34,10 @@ import {WidgetMenuBottomComponent} from "./widget-menu-bottom/widget-menu-bottom
         WidgetContactComponent,
         WidgetFacebookComponent,
         WidgetCopyrightComponent,
-        WidgetMenuBottomComponent
+        WidgetMenuBottomComponent,
+        ElmFooterTopComponent,
+        ElmFooterBottomComponent,
+        ElmFooterComponent
 
     ],
     providers: [],
@@ -48,7 +54,10 @@ import {WidgetMenuBottomComponent} from "./widget-menu-bottom/widget-menu-bottom
         WidgetContactComponent,
         WidgetFacebookComponent,
         WidgetCopyrightComponent,
-        WidgetMenuBottomComponent
+        WidgetMenuBottomComponent,
+        ElmFooterTopComponent,
+        ElmFooterBottomComponent,
+        ElmFooterComponent
     ]
 })
 export class ElementsModule {
