@@ -1,7 +1,9 @@
 
 <h3>Training</h3>
 <ul>
-    <li *ngFor="let item of items | async">
-        {{item}}
+    <li *ngFor="let element of items | async">
+        {{element.id}} -  {{element.name}}
     </li>
 </ul>
+
+<h3 *ngIf="item">{{ (item | async)|json }}</h3>
