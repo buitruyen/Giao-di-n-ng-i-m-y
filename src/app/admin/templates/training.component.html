@@ -1,1 +1,7 @@
-<h3>training</h3>
+
+<h3>Training</h3>
+<ul>
+    <li *ngFor="let item of items | async">
+        {{item}}
+    </li>
+</ul>
