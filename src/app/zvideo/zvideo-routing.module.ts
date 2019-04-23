@@ -10,12 +10,12 @@ const DefineRoutes: Routes = [
     //Home page  /
     {path: '', component: HomeComponent},
     // List videos /video?page=1
-    {path: '/videos', component: VideosComponent},
+    {path: 'videos', component: VideosComponent},
     // List Playlists /playlists?page=1
-    {path: '/playlists', component: PlaylistsComponent},
+    {path: 'playlists', component: PlaylistsComponent},
     // List video in Playlists /playlists?page=1
     {
-        path: '/playlist',
+        path: 'playlist',
         children: [
             {path: '', component: PlaylistsComponent},
             {path: ':id', component: PlaylistComponent},
@@ -25,7 +25,7 @@ const DefineRoutes: Routes = [
 
     // infor video
     {
-        path: '/video',
+        path: 'video',
         children: [
             {path: '', component: VideosComponent},
             {path: ':id', component: VideoComponent},

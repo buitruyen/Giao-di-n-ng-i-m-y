@@ -20,7 +20,7 @@ import {ZvideoModule} from "./zvideo/zvideo.module";
         //Custom module
         SharedModule,
         ElementsModule,
-        ZvideoModule
+        ZvideoModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
