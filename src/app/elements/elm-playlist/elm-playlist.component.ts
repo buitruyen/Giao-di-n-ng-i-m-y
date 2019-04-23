@@ -1,15 +1,13 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import {Component, OnInit, Input, OnChanges} from '@angular/core';
 
 
 @Component({
-	selector: 'app-elm-playlist',
-	templateUrl: './elm-playlist.component.html'
+    selector: 'app-elm-playlist',
+    templateUrl: './elm-playlist.component.html'
 })
 export class ElmPlaylistComponent implements OnInit {
-
-
-
-	ngOnInit() {
-	}
+    @Input('title') title: string;
+    ngOnInit() {
+    }
 
 }

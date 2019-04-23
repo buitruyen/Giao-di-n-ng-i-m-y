@@ -11,7 +11,6 @@ export class WidgetAdsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.position);
     }
 
 }

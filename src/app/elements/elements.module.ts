@@ -18,6 +18,7 @@ import {ElmFooterBottomComponent} from "./elm-footer-bottom/elm-footer-bottom.co
 import {ElmFooterComponent} from "./elm-footer/elm-footer.component";
 import {ElmPlaylistComponent} from "./elm-playlist/elm-playlist.component";
 import {ElmVideoComponent} from "./elm-video/elm-video.component";
+import {ElmPanelTitleComponent} from "./elm-panel-title/elm-panel-title.component";
 
 @NgModule({
     imports: [
@@ -41,7 +42,8 @@ import {ElmVideoComponent} from "./elm-video/elm-video.component";
         ElmFooterBottomComponent,
         ElmFooterComponent,
         ElmPlaylistComponent,
-        ElmVideoComponent
+        ElmVideoComponent,
+        ElmPanelTitleComponent
 
     ],
     providers: [],
@@ -63,7 +65,8 @@ import {ElmVideoComponent} from "./elm-video/elm-video.component";
         ElmFooterBottomComponent,
         ElmFooterComponent,
         ElmPlaylistComponent,
-        ElmVideoComponent
+        ElmVideoComponent,
+        ElmPanelTitleComponent
     ]
 })
 export class ElementsModule {
