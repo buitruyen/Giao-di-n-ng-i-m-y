@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {ElementsModule} from "./elements/elements.module";
 import {SharedModule} from "./shared/shared.module";
 import {ZvideoModule} from "./zvideo/zvideo.module";
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import {ZvideoModule} from "./zvideo/zvideo.module";
         SharedModule,
         ElementsModule,
         ZvideoModule,
+        AdminModule
     ],
     providers: [],
     bootstrap: [AppComponent]
