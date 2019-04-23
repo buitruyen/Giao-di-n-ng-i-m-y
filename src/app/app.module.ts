@@ -5,16 +5,22 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ElementsModule} from "./elements/elements.module";
 import {SharedModule} from "./shared/shared.module";
+import {ZvideoModule} from "./zvideo/zvideo.module";
 
 @NgModule({
     declarations: [
         AppComponent
     ],
     imports: [
-        SharedModule,
+
+        //Angular module
         BrowserModule,
+        //Routing
         AppRoutingModule,
-        ElementsModule
+        //Custom module
+        SharedModule,
+        ElementsModule,
+        ZvideoModule
     ],
     providers: [],
     bootstrap: [AppComponent]

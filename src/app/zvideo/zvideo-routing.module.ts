@@ -7,5 +7,5 @@ const DefineRoutes: Routes = [];
     imports: [RouterModule.forRoot(DefineRoutes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {
+export class ZvideoRoutingModule {
 }
