@@ -10,7 +10,6 @@ export class ElmPanelTitleComponent implements OnInit {
     @Output("myLayout") myLayout = new EventEmitter<string>();
 
     ngOnInit(): void {
-        console.log(this.layout);
     }
 
     setActive(layout: string) {

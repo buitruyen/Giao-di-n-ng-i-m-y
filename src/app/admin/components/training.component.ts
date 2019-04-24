@@ -17,7 +17,6 @@ export class TrainingComponent implements OnInit {
 
         this.item = db.object('/items/course2').valueChanges();
         this.items.subscribe(valueOfItems => {
-            console.log(valueOfItems);
         });
 
         //Xóa
@@ -56,6 +55,5 @@ export class TrainingComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.items);
     }
 }

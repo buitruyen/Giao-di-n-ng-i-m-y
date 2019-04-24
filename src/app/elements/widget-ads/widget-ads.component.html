@@ -2,19 +2,18 @@
 <a *ngIf="item && position =='banner'" href="{{item.link}}" target="_blank">
     <img src="{{item.url}}" width="468" height="60" alt="{{item.text}}"/></a>
 <!--Side-bar-->
-<div *ngIf="position =='sidebar'" class="banner-widget no-border">
-<a href="#" target="_blank">
-    <img src="assets/images/ads-sidebar.jpg" width="300" height="250" alt=""/>
+<div *ngIf="item && position =='sidebar'" class="banner-widget no-border">
+<a href="{{item.link}}" target="_blank">
+    <img src="{{item.url}}" width="300" height="250" alt="{{item.text}}"/>
 </a>
 <a href="#" class="banner-meta">
-    <i class="fa fa-angle-double-up"></i> Contact us about advert spaces <i class="fa fa-angle-double-up"></i>
+    <i class="fa fa-angle-double-up"></i>{{item.text}}<i class="fa fa-angle-double-up"></i>
 </a>
 </div>
 <!--Article-->
-<div *ngIf="position =='article'" class="panel-block banner-block">
-    <a href="#" target="_blank"><img src="assets/images/ads-article.jpg" width="468"
-                                     height="60"
-                                     alt=""></a>
-    <a href="#" class="banner-meta"><i class="fa fa-angle-double-up"></i> Contact us
-        about advert spaces <i class="fa fa-angle-double-up"></i></a>
+<div *ngIf="item && position =='article'" class="panel-block banner-block">
+    <a href="{{item.link}}" target="_blank"><img src="{{item.url}}" width="468" height="60" alt="{{item.text}}"></a>
+    <a href="#" class="banner-meta">
+        <i class="fa fa-angle-double-up"></i> {{item.text}}<i class="fa fa-angle-double-up"></i>
+    </a>
 </div>

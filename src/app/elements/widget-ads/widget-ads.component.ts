@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FirebaseObjectObservable} from "@angular/fire/database-deprecated";
 import {Ads} from "../../shared/defines/ads.class";
 import {AdsService} from "../../shared/services/ads.service";
 
@@ -16,7 +15,7 @@ export class WidgetAdsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._adService.getItemByPosition("banner").subscribe(
+        this._adService.getItemByPosition(this.position).subscribe(
             (items: Ads[]) => {
                 this.item = items[0];
             })
