@@ -3,8 +3,10 @@
     <!--ELEMENT PLAYLIST : LATEST PLAYLIST-->
     <app-elm-playlist
             *ngFor="let playlistInfor of playlistInfors"
+            totalItems="{{playlistInfor.totalItems}}"
             playlistID="{{playlistInfor.playlistID}}"
             layout="{{playlistInfor.layoutType}}">
+
     </app-elm-playlist>
 
     <!--WIDGET-ADS : ARTICLE-->

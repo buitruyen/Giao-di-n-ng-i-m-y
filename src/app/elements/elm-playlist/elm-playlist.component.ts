@@ -12,6 +12,7 @@ import {Video} from "../../shared/defines/video.class";
 export class ElmPlaylistComponent implements OnInit {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
+    @Input('totalItems') totalItem: number = 2;
 
 
     playlistInfor: Playlist = null;
@@ -28,7 +29,7 @@ export class ElmPlaylistComponent implements OnInit {
                 this.playlistInfor = Playlist.fromJsonList(items)[0];
             });
         //Videos
-        this._videoService.getItemsByPlaylistID(this.playlistID).subscribe(
+        this._videoService.getItemsByPlaylistID(this.playlistID, +(this.totalItem)).subscribe(
             (items: Video[]) => {
                 this.items = Video.fromJsonList(items);
             });
