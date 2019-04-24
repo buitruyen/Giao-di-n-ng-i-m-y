@@ -14,31 +14,32 @@ export class Playlist {
 		return new Playlist(id, channelId, title, slug, description, thumbnails);
 	}
 
-	static fromJsonList( array : any ) : Playlist[]{	
+	static fromJsonList( array : any ) : Playlist[]{
 		return array.map(Playlist.fromJson)
 	}
 
-	public get id() : string {
+
+	get id(): string {
 		return this._id;
 	}
 
-	public get channelId() : string {
+	get channelId(): string {
 		return this._channelId;
 	}
 
-	public get title() : string {
+	get title(): string {
 		return this._title;
 	}
 
-	public get slug() : string {
+	get slug(): string {
 		return this._slug;
 	}
 
-	public get description() : string {
+	get description(): string {
 		return this._description;
 	}
 
-	public get thumbnails() : string {
+	get thumbnails(): string {
 		return this._thumbnails;
 	}
 }
