@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
 import {dbAds} from "../../../environments/db-ads";
+import {dbPlaylist} from "../../../environments/db-playlist";
 
 @Component({
     selector: 'app-admi-push-data',
@@ -19,15 +20,21 @@ export class PushDataComponent implements OnInit {
     }
 
     onPushData() {
+        // //Thêm dữ liệu
+        // const itemsRef = this._db.list('ads');
+        // dbAds.ads.forEach((ad: any) => {
+        //     itemsRef.push({
+        //         url: ad.url,
+        //         link: ad.link,
+        //         text: ad.text,
+        //         position: ad.position
+        //     });
+        // });
+
         //Thêm dữ liệu
-        const itemsRef = this._db.list('ads');
-        dbAds.ads.forEach((ad: any) => {
-            itemsRef.push({
-                url: ad.url,
-                link: ad.link,
-                text: ad.text,
-                position: ad.position
-            });
+        const itemsRef = this._db.list('playlist');
+        dbPlaylist.playlist.forEach((playlist: any) => {
+            console.log(playlist);
         });
     }
 }
