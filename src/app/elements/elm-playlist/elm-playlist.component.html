@@ -1,7 +1,7 @@
-<div class="content-panel">
+<div class="content-panel" *ngIf="playlistInfor">
     <!--ELEMENT PANEL TITLE-->
     <div class="panel-title"
-         [app-elm-panel-title]="title"
+         [app-elm-panel-title]="playlistInfor.title"
          [layout]="layout"
          (myLayout)="changeLayout($event)"
     ></div>

@@ -1,4 +1,7 @@
-import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {Playlist} from "../../shared/defines/playlist.class";
+import {PlaylistService} from "../../shared/services/playlist.service";
+import {VideoService} from "../../shared/services/video.service";
 
 
 @Component({
@@ -6,10 +9,21 @@ import {Component, OnInit, Input, OnChanges} from '@angular/core';
     templateUrl: './elm-playlist.component.html'
 })
 export class ElmPlaylistComponent implements OnInit {
-    @Input('title') title: string;
+    @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
 
+
+    playlistInfor: Playlist = null;
+
+    constructor(private _playlistService: PlaylistService, private _videoService: VideoService) {
+
+    }
+
     ngOnInit() {
+        this._playlistService.getItemByID(this.playlistID).subscribe(
+            (items: Playlist) => {
+                this.playlistInfor = Playlist.fromJsonList(items)[0];
+            });
     }
 
     changeLayout(event: any) {

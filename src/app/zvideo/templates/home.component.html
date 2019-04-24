@@ -1,19 +1,11 @@
 <!-- BEGIN .with-sidebar-layout -->
 <div class="with-sidebar-layout left">
     <!--ELEMENT PLAYLIST : LATEST PLAYLIST-->
-    <app-elm-playlist title="Angular" layout="grid"></app-elm-playlist>
-
-    <!--ELEMENT PLAYLIST : LATEST PLAYLIST-->
-    <app-elm-playlist title="PHP" layout="hdgrid"></app-elm-playlist>
-
-    <!--WIDGET-ADS : ARTICLE-->
-    <div class="content-panel" app-widget-ads="article"></div>
-
-    <!--ELEMENT PLAYLIST : LATEST PLAYLIST-->
-    <app-elm-playlist title="Android" layout="list"></app-elm-playlist>
-
-    <!--ELEMENT PLAYLIST : LATEST PLAYLIST-->
-    <app-elm-playlist title="Python" layout="hdlist"></app-elm-playlist>
+    <app-elm-playlist
+            *ngFor="let playlistInfor of playlistInfors"
+            playlistID="{{playlistInfor.playlistID}}"
+            layout="{{playlistInfor.layoutType}}">
+    </app-elm-playlist>
 
     <!--WIDGET-ADS : ARTICLE-->
     <div class="content-panel" app-widget-ads="article"></div>
