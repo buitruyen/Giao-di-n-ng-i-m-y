@@ -4,7 +4,7 @@ export class Video {
 		private _id			: string = "",
 		private _publishedAt: string = "",
 		private _channelId	: string = "",
-		private _playlistId	: string = "",
+		private _playlistID	: string = "",
 		private _title		: string = "",
 		private _slug		: string = "",
 		private _description: string = "",
@@ -17,8 +17,8 @@ export class Video {
 
 	}
 
-	static fromJson( {$key, id, publishedAt, channelId, playlistId, title, slug, description, thumbnails, views, comments, ratings, featured } : Video ){
-		return new Video($key, id, publishedAt, channelId, playlistId, title, slug, description, thumbnails, views, comments, ratings, featured);
+	static fromJson( {$key, id, publishedAt, channelId, playlistID, title, slug, description, thumbnails, views, comments, ratings, featured } : Video ){
+		return new Video($key, id, publishedAt, channelId, playlistID, title, slug, description, thumbnails, views, comments, ratings, featured);
 	}
 
 	static fromJsonList( array : any ) : Video[]{	
@@ -41,8 +41,9 @@ export class Video {
 		return this._channelId;
 	}
 
-	public get playlistId() : string {
-		return this._playlistId;
+
+	get playlistID(): string {
+		return this._playlistID;
 	}
 
 	public get title() : string {
