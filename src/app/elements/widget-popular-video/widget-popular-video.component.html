@@ -1,13 +1,6 @@
 <h3>Popular Videos</h3>
 <div class="widget-videos-small">
     <!--ELEMENT VIDEO-->
-    <div class="item" app-elm-video></div>
-
-    <!--ELEMENT VIDEO-->
-    <div class="item" app-elm-video></div>
-
-    <!--ELEMENT VIDEO-->
-    <div class="item" app-elm-video></div>
-
+    <div class="item" *ngFor="let item of items" [app-elm-video]="item"></div>
 </div>
 <!-- END .widget -->

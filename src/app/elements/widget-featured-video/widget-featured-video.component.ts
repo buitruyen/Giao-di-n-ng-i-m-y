@@ -18,7 +18,6 @@ export class WidgetFeaturedVideoComponent implements OnInit {
         this._videoService.getItemsFeatured().subscribe(
             (items: Video[]) => {
                 this.items = Video.fromJsonList(items);
-                console.log(this.items);
 
             })
 

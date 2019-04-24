@@ -13,4 +13,8 @@ export class VideoService {
 		return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO,ref => ref.limitToFirst(4).orderByChild("featured").equalTo(true)).valueChanges());
 	}
 
+	getItemsPopular():Observable<Video[]>{
+		return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO,ref => ref.limitToLast(3).orderByChild("views")).valueChanges());
+	}
+
 }
