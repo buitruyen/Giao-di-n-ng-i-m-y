@@ -19,6 +19,7 @@ import {ElmFooterComponent} from "./elm-footer/elm-footer.component";
 import {ElmPlaylistComponent} from "./elm-playlist/elm-playlist.component";
 import {ElmVideoComponent} from "./elm-video/elm-video.component";
 import {ElmPanelTitleComponent} from "./elm-panel-title/elm-panel-title.component";
+import {AdsService} from "../shared/services/ads.service";
 
 @NgModule({
     imports: [

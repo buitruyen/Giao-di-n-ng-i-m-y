@@ -1,6 +1,6 @@
 <!--Top-->
-<a *ngIf="position =='top'" href="#" target="_blank">
-    <img src="assets/images/ads-banner.jpg" width="468" height="60" alt=""/></a>
+<a *ngIf="item && position =='banner'" href="{{item.link}}" target="_blank">
+    <img src="{{item.url}}" width="468" height="60" alt="{{item.text}}"/></a>
 <!--Side-bar-->
 <div *ngIf="position =='sidebar'" class="banner-widget no-border">
 <a href="#" target="_blank">

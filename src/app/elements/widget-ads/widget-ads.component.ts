@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FirebaseObjectObservable} from "@angular/fire/database-deprecated";
 import {Ads} from "../../shared/defines/ads.class";
-import {AngularFireDatabase} from "@angular/fire/database";
+import {AdsService} from "../../shared/services/ads.service";
 
 @Component({
     selector: '[app-widget-ads]',
@@ -9,17 +9,18 @@ import {AngularFireDatabase} from "@angular/fire/database";
 })
 export class WidgetAdsComponent implements OnInit {
     @Input("app-widget-ads") position: string;
-    item: FirebaseObjectObservable<Ads>;
+    item: Ads = null;
 
-    constructor(private _db: AngularFireDatabase) {
+    constructor(private _adService: AdsService) {
 
     }
 
     ngOnInit(): void {
-        //Hiện thị
-        this.item = this._db.list('/ads/',ref => ref.orderByChild('position').equalTo(this.position)).valueChanges().subscribe(valueOfItems => {
-            console.log(valueOfItems);
-        });
+        this._adService.getItemByPosition("banner").subscribe(
+            (items: Ads[]) => {
+                this.item = items[0];
+            })
+
     }
 
 }

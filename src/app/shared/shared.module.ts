@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
+import {AdsService} from "./services/ads.service";
 
 @NgModule({
     imports:[
@@ -8,7 +9,7 @@ import {CommonModule} from "@angular/common";
     declarations: [
 
     ],
-    providers: [],
+    providers: [AdsService],
 })
 export class SharedModule {
 
