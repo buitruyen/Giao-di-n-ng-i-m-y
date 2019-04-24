@@ -1,1 +1,56 @@
-<h3>video.component</h3>
+<div class="without-sidebar-layout">
+    <div class="video-slider" *ngIf="videoInfor">
+        <!-- BEGIN .wrapper -->
+        <div class="wrapper">
+            <div class="slider-controls">
+                <div class="video-embed">
+                    <div class="otplayer-wrapper">
+                        <app-elm-youtube-iframe [width]="560" [height]="315" [videoID]="videoInfor.id"></app-elm-youtube-iframe>
+                    </div>
+
+                </div>
+            </div>
+            <div class="video-slider-meta">
+                <div class="video-slider-info right">
+                    <a href="#" class="meta-click">
+                        <i class="fa fa-comments"></i>
+                        <strong>{{ videoInfor.comments }}</strong> comments
+                    </a>
+                    <a href="#" class="meta-click">
+                        <i class="fa fa-eye"></i> <strong>{{ videoInfor.views }}</strong> views
+                    </a>
+                    <a href="#" class="ot-like-button">
+                        <i class="fa fa-heart"></i> Like This Video
+                    </a>
+                </div>
+                <h3>{{ videoInfor.title }}</h3>
+            </div>
+            <!-- END .wrapper -->
+        </div>
+        <!-- END .video-slider -->
+    </div>
+
+    <div class="content-panel">
+        <div class="panel-title">
+            <h2>Video Details</h2>
+        </div>
+        <div class="panel-block">
+            <div class="panel-content" *ngIf="videoInfor">
+                <div class="video-stats">
+                    <div class="video-stat-blobs">
+                        <span><strong>{{ videoInfor.views }}</strong><i>views</i></span>
+                        <span><strong>{{ videoInfor.comments }}</strong><i>comments</i></span>
+                        <span><strong>{{ videoInfor.ratings }}</strong><i>likes</i></span>
+                    </div>
+                    <div class="hr-spacer"></div>
+                </div>
+                <p>{{ videoInfor.description }}</p>
+
+            </div>
+        </div>
+    </div>
+    <!-- ADS -->
+    <div class="content-panel" app-widget-ads="article"></div>
+
+    <!-- END .with-sidebar-layout -->
+</div>

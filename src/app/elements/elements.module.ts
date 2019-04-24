@@ -20,11 +20,14 @@ import {ElmPlaylistComponent} from "./elm-playlist/elm-playlist.component";
 import {ElmVideoComponent} from "./elm-video/elm-video.component";
 import {ElmPanelTitleComponent} from "./elm-panel-title/elm-panel-title.component";
 import {RouterModule} from "@angular/router";
+import {ElmYoutubeIframeComponent} from "./elm-youtube-iframe/elm-youtube-iframe.component";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        SharedModule
     ],
     declarations: [
         WidgetAdsComponent,
@@ -46,6 +49,7 @@ import {RouterModule} from "@angular/router";
         ElmPlaylistComponent,
         ElmVideoComponent,
         ElmPanelTitleComponent,
+        ElmYoutubeIframeComponent
 
 
     ],
@@ -69,7 +73,8 @@ import {RouterModule} from "@angular/router";
         ElmFooterComponent,
         ElmPlaylistComponent,
         ElmVideoComponent,
-        ElmPanelTitleComponent
+        ElmPanelTitleComponent,
+        ElmYoutubeIframeComponent
     ]
 })
 export class ElementsModule {
