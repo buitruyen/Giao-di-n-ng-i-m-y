@@ -7,6 +7,7 @@ import {AngularFireAuthModule} from "@angular/fire/auth";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../../environments/environment";
+import {PushDataComponent} from "./components/push-data.component";
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import {environment} from "../../environments/environment";
 
     ],
     declarations: [
-        TrainingComponent
+        TrainingComponent,
+        PushDataComponent
     ],
     providers: [],
 })

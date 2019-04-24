@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
 import {AngularFireDatabase} from "@angular/fire/database";
 import {FirebaseListObservable, FirebaseObjectObservable} from "@angular/fire/database-deprecated";
 
@@ -15,7 +14,7 @@ export class TrainingComponent implements OnInit {
     constructor(db: AngularFireDatabase) {
         //Hiện thị
         this.items = db.list('/items', ref => ref.orderByChild('ordering').equalTo(2)).valueChanges();
-        
+
         this.item = db.object('/items/course2').valueChanges();
         this.items.subscribe(valueOfItems => {
             console.log(valueOfItems);
