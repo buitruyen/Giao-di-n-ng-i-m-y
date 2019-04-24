@@ -33,17 +33,40 @@ export class PushDataComponent implements OnInit {
         // });
 
         //Thêm dữ liệu cho playlist
-        const itemsRef = this._db.list('playlist');
+        // const itemsRef = this._db.list('playlist');
+        // dbPlaylist.playlist.forEach((playlist: any) => {
+        //     itemsRef.push({
+        //         id: playlist.id,
+        //         channelId:playlist.channelId,
+        //         title: playlist.title,
+        //         slug: playlist.slug,
+        //         description: playlist.description,
+        //         thumbnails: playlist.thumbnails,
+        //     });
+        // });
+
+
+        //Thêm dữ liệu cho video
+        const itemsRef = this._db.list('video');
         dbPlaylist.playlist.forEach((playlist: any) => {
-            itemsRef.push({
-                id: playlist.id,
-                channelId:playlist.channelId,
-                title: playlist.title,
-                slug: playlist.slug,
-                description: playlist.description,
-                thumbnails: playlist.thumbnails,
-            });
+            playlist.items.forEach((video: any) => {
+                itemsRef.push({
+                    id: video.id,
+                    channelId: video.channelId,
+                    description: video.description,
+                    playlistID: video.playlistID,
+                    publishedAt: video.publishedAt,
+                    slug: video.slug,
+                    thumbnails: video.thumbnails,
+                    title: video.title,
+                    comments: this.getRandomInt(1, 500),
+                    views: this.getRandomInt(1, 100),
+                    ratings: this.getRandomInt(1, 100),
+                    featured: this.getRandomInt(1, 5) == 2 ? true : false,
+                })
+            })
         });
+
 
         // const itemsRef = this._db.list('playlist');
         // var myArray = [];
@@ -62,6 +85,10 @@ export class PushDataComponent implements OnInit {
         //         });
         //     })
         // })
+    }
+
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max + min + 1)) + min;
     }
 
 }
