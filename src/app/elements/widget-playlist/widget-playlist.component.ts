@@ -9,7 +9,7 @@ import {Ads} from "../../shared/defines/ads.class";
     templateUrl: './widget-playlist.component.html'
 })
 export class WidgetPlaylistComponent implements OnInit {
-    item: Playlist[] = [];
+    items: Playlist[] = [];
 
     constructor(private _playlistService: PlaylistService) {
 
@@ -18,7 +18,7 @@ export class WidgetPlaylistComponent implements OnInit {
     ngOnInit() {
         this._playlistService.getItems().subscribe(
             (items: Playlist[]) => {
-                console.log(Playlist.fromJsonList(items));
+                this.items = Playlist.fromJsonList(items);
 
             })
 

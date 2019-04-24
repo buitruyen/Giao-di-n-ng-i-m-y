@@ -19,11 +19,12 @@ import {ElmFooterComponent} from "./elm-footer/elm-footer.component";
 import {ElmPlaylistComponent} from "./elm-playlist/elm-playlist.component";
 import {ElmVideoComponent} from "./elm-video/elm-video.component";
 import {ElmPanelTitleComponent} from "./elm-panel-title/elm-panel-title.component";
-import {AdsService} from "../shared/services/ads.service";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     declarations: [
         WidgetAdsComponent,
@@ -44,7 +45,8 @@ import {AdsService} from "../shared/services/ads.service";
         ElmFooterComponent,
         ElmPlaylistComponent,
         ElmVideoComponent,
-        ElmPanelTitleComponent
+        ElmPanelTitleComponent,
+
 
     ],
     providers: [],
