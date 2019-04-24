@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Ads} from "../../shared/defines/ads.class";
 import {AdsService} from "../../shared/services/ads.service";
-import { map } from "rxjs/operators";
 
 @Component({
     selector: '[app-widget-ads]',
@@ -19,6 +18,7 @@ export class WidgetAdsComponent implements OnInit {
         this._adService.getItemByPosition(this.position).subscribe(
             (items: Ads[]) => {
                 this.item = Ads.fromJsonList(items)[0];
+
             })
 
     }
