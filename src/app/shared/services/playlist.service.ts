@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
-import {Ads} from "../defines/ads.class";
 import {AppSetting} from "../../app.setting";
 import {Observable} from "rxjs";
 import {Playlist} from "../defines/playlist.class";

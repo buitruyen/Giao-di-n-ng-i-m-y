@@ -5,16 +5,16 @@
          [layout]="layout"
          (myLayout)="changeLayout($event)"
     ></div>
-    <div class="panel-block video-list {{layout}}">
+    <div class="panel-block video-list {{layout}}" *ngIf="items">
         <!--ELEMENT  VIDEO 1-->
-        <div class="item" app-elm-video show-desc="true"></div>
-        <!--ELEMENT  VIDEO 2-->
-        <div class="item" app-elm-video show-desc="true"></div>
-        <!--ELEMENT  VIDEO 3-->
-        <div class="item" app-elm-video show-desc="true"></div>
+        <div class="item"
+             *ngFor="let item of items"
+             [app-elm-video]="item"
+             show-desc="true">
+        </div>
 
         <div class="clear-list-button">
-            <a href="#" class="back-button">View More Videos</a>
+            <a [routerLink]="['/playlist',playlistInfor.id]" class="back-button">View More Videos</a>
         </div>
 
     </div>

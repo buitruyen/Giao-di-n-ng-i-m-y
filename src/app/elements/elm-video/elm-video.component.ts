@@ -10,6 +10,5 @@ export class ElmVideoComponent implements OnInit {
     @Input("app-elm-video") item: Video = null;
 
     ngOnInit() {
-        console.log(this.item);
     }
 }
