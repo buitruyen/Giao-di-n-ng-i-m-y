@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
-import {dbAds} from "../../../environments/db-ads";
 import {dbPlaylist} from "../../../environments/db-playlist";
-import any = jasmine.any;
 
 @Component({
     selector: 'app-admi-push-data',
