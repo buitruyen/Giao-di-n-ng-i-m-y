@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {VideoService} from "../../shared/services/video.service";
 import {Video} from "../../shared/defines/video.class";
-import {PlaylistService} from "../../shared/services/playlist.service";
-import {Playlist} from "../../shared/defines/playlist.class";
 
 @Component({
     selector: 'app-zvideo-video',
@@ -12,11 +10,10 @@ import {Playlist} from "../../shared/defines/playlist.class";
 export class VideoComponent implements OnInit {
     videoID: string = null;
     videoInfor: Video = null;
-    playlistInfor: Playlist = null;
     items: Video[] = null;
     layoutDefault: string = 'grid';
 
-    constructor(private _activatedRouterService: ActivatedRoute, private _playlistService: PlaylistService, private _videoService: VideoService) {
+    constructor(private _activatedRouterService: ActivatedRoute,private _videoService: VideoService) {
     }
 
     ngOnInit() {
@@ -26,19 +23,6 @@ export class VideoComponent implements OnInit {
         this._videoService.getItemsByID(this.videoID).subscribe(
             (items) => {
                 this.videoInfor = Video.fromJsonList(items)[0];
-                //PlaylistInfor by playlistID
-                this._playlistService.getItemByID(this.videoInfor.playlistID).subscribe(
-                    (items) => {
-                        this.playlistInfor = Playlist.fromJsonList(items)[0];
-                    }
-                );
-                //Videos
-                this._videoService.getItemsByPlaylistID(this.videoInfor.playlistID).subscribe(
-                    (items: Video[]) => {
-                        this.items = Video.fromJsonList(items);
-                        console.log(this.items);
-                    }
-                )
             }
         )
 
