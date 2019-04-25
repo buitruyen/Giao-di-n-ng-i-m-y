@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Playlist} from "../../shared/defines/playlist.class";
 import {PlaylistService} from "../../shared/services/playlist.service";
 import {VideoService} from "../../shared/services/video.service";
@@ -9,7 +9,7 @@ import {Video} from "../../shared/defines/video.class";
     selector: 'app-elm-playlist',
     templateUrl: './elm-playlist.component.html'
 })
-export class ElmPlaylistComponent implements OnInit {
+export class ElmPlaylistComponent implements OnInit,OnChanges {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;
@@ -23,7 +23,18 @@ export class ElmPlaylistComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.playlistID);
+        this.initData();
+    }
+
+    changeLayout(event: any) {
+        this.layout = event;
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.initData();
+
+    }
+    initData(){
         //Playlist Infor
         this._playlistService.getItemByID(this.playlistID).subscribe(
             (items) => {
@@ -35,9 +46,5 @@ export class ElmPlaylistComponent implements OnInit {
                 this.items = Video.fromJsonList(items);
             });
 
-    }
-
-    changeLayout(event: any) {
-        this.layout = event;
     }
 }
