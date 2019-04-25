@@ -23,6 +23,7 @@ export class ElmPlaylistComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log(this.playlistID);
         //Playlist Infor
         this._playlistService.getItemByID(this.playlistID).subscribe(
             (items) => {
