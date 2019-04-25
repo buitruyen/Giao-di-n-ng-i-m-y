@@ -22,6 +22,7 @@ import {ElmPanelTitleComponent} from "./elm-panel-title/elm-panel-title.componen
 import {RouterModule} from "@angular/router";
 import {ElmYoutubeIframeComponent} from "./elm-youtube-iframe/elm-youtube-iframe.component";
 import {SharedModule} from "../shared/shared.module";
+import {ElmLoaderComponent} from "./elm-loader/elm-loader.component";
 
 @NgModule({
     imports: [
@@ -49,7 +50,8 @@ import {SharedModule} from "../shared/shared.module";
         ElmPlaylistComponent,
         ElmVideoComponent,
         ElmPanelTitleComponent,
-        ElmYoutubeIframeComponent
+        ElmYoutubeIframeComponent,
+        ElmLoaderComponent
 
 
     ],
@@ -74,7 +76,8 @@ import {SharedModule} from "../shared/shared.module";
         ElmPlaylistComponent,
         ElmVideoComponent,
         ElmPanelTitleComponent,
-        ElmYoutubeIframeComponent
+        ElmYoutubeIframeComponent,
+        ElmLoaderComponent
     ]
 })
 export class ElementsModule {

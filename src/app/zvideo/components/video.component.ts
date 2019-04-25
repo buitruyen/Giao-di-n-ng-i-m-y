@@ -48,7 +48,6 @@ export class VideoComponent implements OnInit, OnDestroy ,AfterViewChecked{
             ).subscribe((e: any) => {
             $("html, body").stop().animate({scrollTop:0}, 1000, 'swing');
         });
-       
 
     }
 }

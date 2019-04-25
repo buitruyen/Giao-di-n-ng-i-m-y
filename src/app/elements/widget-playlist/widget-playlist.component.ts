@@ -10,6 +10,7 @@ import {Ads} from "../../shared/defines/ads.class";
 })
 export class WidgetPlaylistComponent implements OnInit {
     items: Playlist[] = [];
+    isLoading: boolean = true;
 
     constructor(private _playlistService: PlaylistService) {
 
@@ -19,6 +20,7 @@ export class WidgetPlaylistComponent implements OnInit {
         this._playlistService.getItems().subscribe(
             (items: Playlist[]) => {
                 this.items = Playlist.fromJsonList(items);
+                this.isLoading = false;
 
             })
 
