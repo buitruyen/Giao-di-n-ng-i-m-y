@@ -49,6 +49,13 @@
             </div>
         </div>
     </div>
+
+    <app-elm-playlist
+            *ngIf="videoInfor"
+            totalItems="3"
+            playlistID="{{ videoInfor.playlistID }}"
+            layout="{{ layoutDefault }}">
+    </app-elm-playlist>
     <!-- ADS -->
     <div class="content-panel" app-widget-ads="article"></div>
 
