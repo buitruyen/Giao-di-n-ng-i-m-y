@@ -25,6 +25,7 @@ import {SharedModule} from "../shared/shared.module";
 import {ElmLoaderComponent} from "./elm-loader/elm-loader.component";
 import {ElmPlaylistPaginationComponent} from "./elm-playlist-pagination/elm-playlist-pagination.component";
 import {ElmPagerComponent} from "./elm-pager/elm-pager.component";
+import {ElmPlaylistLoadMoreComponent} from "./elm-playlist-load-more/elm-playlist-load-more.component";
 
 @NgModule({
     imports: [
@@ -55,7 +56,8 @@ import {ElmPagerComponent} from "./elm-pager/elm-pager.component";
         ElmYoutubeIframeComponent,
         ElmLoaderComponent,
         ElmPlaylistPaginationComponent,
-        ElmPagerComponent
+        ElmPagerComponent,
+        ElmPlaylistLoadMoreComponent
 
 
     ],
@@ -83,7 +85,8 @@ import {ElmPagerComponent} from "./elm-pager/elm-pager.component";
         ElmYoutubeIframeComponent,
         ElmLoaderComponent,
         ElmPlaylistPaginationComponent,
-        ElmPagerComponent
+        ElmPagerComponent,
+        ElmPlaylistLoadMoreComponent
     ]
 })
 export class ElementsModule {

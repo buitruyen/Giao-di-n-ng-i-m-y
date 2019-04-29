@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
 import {AppSetting} from "../../app.setting";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {Video} from "../defines/video.class";
 
 @Injectable()
@@ -19,6 +19,10 @@ export class VideoService {
 
     getItemsByPlaylistID(playListID: string, totalItems: number = 4): Observable<Video[]> {
         return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO, ref => ref.limitToFirst(totalItems).orderByChild("playlistID").equalTo(playListID)).valueChanges());
+    }
+
+    getItemsScrollByPlaylistID(playListID: string,limit:BehaviorSubject<number>): Observable<Video[]> {
+        return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO, ref => ref.limitToFirst(limit.getValue()).orderByChild("playlistID").equalTo(playListID)).valueChanges());
     }
 
     getItemsByID(videoID: string): Observable<Video[]> {
