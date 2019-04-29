@@ -9,8 +9,8 @@ import {Observable} from "rxjs";
 })
 export class TrainingComponent implements OnInit {
 
-    private items: Observable<any[]>;
-    private item: Observable<any>;
+     items: Observable<any[]>;
+     item: Observable<any>;
 
     constructor(db: AngularFireDatabase) {
         //Hiện thị

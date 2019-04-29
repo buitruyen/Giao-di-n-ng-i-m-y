@@ -14,12 +14,12 @@ export class ElmPlaylistLoadMoreComponent implements OnInit {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
 
-    private items: Video[] = [];
-    private limit: BehaviorSubject<number> = null;
-    private lastKey: string = null;
-    private queryable: boolean = true;
-    private showButtonLoadMore: boolean = true;
-    private playlistInfor: Playlist = null;
+    items: Video[] = [];
+    limit: BehaviorSubject<number> = null;
+    lastKey: string = null;
+    queryable: boolean = true;
+    showButtonLoadMore: boolean = true;
+    playlistInfor: Playlist = null;
 
     constructor(private _playlistService: PlaylistService, private _videoService: VideoService) {
 
