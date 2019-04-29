@@ -59,7 +59,7 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges, OnDest
                 this.subscriptionQuery = this._activatedRouteService.queryParams.subscribe(
                     (params: Params) => {
                         let currentPage: number = params['page'];
-                        if(currentPage === undefined) currentPage = 1;
+                        if (currentPage === undefined) currentPage = 1;
                         this.setPages(currentPage);
                     }
                 );
