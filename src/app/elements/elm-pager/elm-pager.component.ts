@@ -11,7 +11,7 @@ export class ElmPagerComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit() {
-		console.log("ElmPagerComponent");
+		console.log(this.pager);
 	}
 
 	setPage(page: number){

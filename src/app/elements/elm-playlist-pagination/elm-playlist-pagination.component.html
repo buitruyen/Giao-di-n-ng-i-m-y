@@ -17,7 +17,10 @@
     </div>
 </div>
 
-<div class="pagination_asset" app-elm-pager>
+<div class="pagination_asset"
+     *ngIf="pager"
+     [app-elm-pager]="pager"
+>
     <!--PAGINATION-->
 </div>
 

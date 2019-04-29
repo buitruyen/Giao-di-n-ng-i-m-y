@@ -1,33 +1,38 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges, OnDestroy} from '@angular/core';
 import {Playlist} from "../../shared/defines/playlist.class";
 import {PlaylistService} from "../../shared/services/playlist.service";
 import {VideoService} from "../../shared/services/video.service";
 import {Video} from "../../shared/defines/video.class";
 import {PagerService} from "../../shared/services/pager.service";
+import {Subscription} from "rxjs";
+import {ActivatedRoute, Params} from "@angular/router";
 
 
 @Component({
     selector: 'app-elm-playlist-pagination',
     templateUrl: './elm-playlist-pagination.component.html'
 })
-export class ElmPlaylistPaginationComponent implements OnInit, OnChanges {
+export class ElmPlaylistPaginationComponent implements OnInit, OnChanges,OnDestroy {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;
+    subscriptionQuery: Subscription;
 
 
     playlistInfor: Playlist = null;
     items: Video[] = [];
     pager: any;
 
-    constructor(private _playlistService: PlaylistService, private _videoService: VideoService, private _pagerService: PagerService) {
+    constructor(private _playlistService: PlaylistService,
+                private _activatedRouteService: ActivatedRoute,
+                private _videoService: VideoService,
+                private _pagerService: PagerService) {
 
     }
 
     ngOnInit() {
         this.initData();
-        this.pager = this._pagerService.getPager(17, 2, 5);
-        console.log(this.pager);
+
     }
 
     changeLayout(event: any) {
@@ -49,7 +54,19 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges {
         this._videoService.getItemsByPlaylistID(this.playlistID, +(this.totalItem)).subscribe(
             (items: Video[]) => {
                 this.items = Video.fromJsonList(items);
+                this.subscriptionQuery = this._activatedRouteService.queryParams.subscribe(
+                    (params: Params) => {
+                        this.pager = this._pagerService.getPager(this.items.length, params['page'], 5);
+                    }
+                );
+
+
+
             });
 
+    }
+
+    ngOnDestroy(): void {
+        this.subscriptionQuery.unsubscribe();
     }
 }
