@@ -7,10 +7,10 @@
          (myLayout)="changeLayout($event)"
     ></div>
 
-    <div class="panel-block video-list {{layout}}" *ngIf="items">
+    <div class="panel-block video-list {{layout}}" *ngIf="pagedItems">
         <!--ELEMENT  VIDEO 1-->
         <div class="item"
-             *ngFor="let item of items"
+             *ngFor="let item of pagedItems"
              [app-elm-video]="item"
              show-desc="true">
         </div>

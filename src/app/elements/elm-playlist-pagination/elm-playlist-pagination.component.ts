@@ -17,6 +17,7 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges, OnDest
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;
     subscriptionQuery: Subscription;
+    pagedItems: Video[];
 
 
     playlistInfor: Playlist = null;
@@ -57,7 +58,9 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges, OnDest
                 this.items = Video.fromJsonList(items);
                 this.subscriptionQuery = this._activatedRouteService.queryParams.subscribe(
                     (params: Params) => {
-                        this.pager = this._pagerService.getPager(this.items.length, params['page'], 5);
+                        let currentPage: number = params['page'];
+                        if(currentPage === undefined) currentPage = 1;
+                        this.setPages(currentPage);
                     }
                 );
 
@@ -71,11 +74,20 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges, OnDest
     }
 
     setPages(page: number) {
-        this._routeService.navigate(['playlist', this.playlistID], {
-            queryParams: {
-                page: page
-            }
-        })
+        // get pager object from service
+        this.pager = this._pagerService.getPager(this.items.length, +(page), 6);
+        if (this.pager) {
+            // get current page of items
+            this.pagedItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
+            this._routeService.navigate(['playlist', this.playlistID], {
+                queryParams: {
+                    page: page
+                }
+            })
+        } else {
+            this.pagedItems = this.items;
+        }
+
 
     }
 }
