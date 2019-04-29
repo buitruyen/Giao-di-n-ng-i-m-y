@@ -9,10 +9,11 @@ import {Video} from "../../shared/defines/video.class";
     selector: 'app-elm-playlist',
     templateUrl: './elm-playlist.component.html'
 })
-export class ElmPlaylistComponent implements OnInit,OnChanges {
+export class ElmPlaylistComponent implements OnInit, OnChanges {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;
+    @Input('showMoreVideo') showMoreVideo: boolean = true;
 
 
     playlistInfor: Playlist = null;
@@ -34,7 +35,8 @@ export class ElmPlaylistComponent implements OnInit,OnChanges {
         this.initData();
 
     }
-    initData(){
+
+    initData() {
         //Playlist Infor
         this._playlistService.getItemByID(this.playlistID).subscribe(
             (items) => {

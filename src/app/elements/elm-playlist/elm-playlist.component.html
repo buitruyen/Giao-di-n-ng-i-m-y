@@ -16,7 +16,7 @@
              show-desc="true">
         </div>
 
-        <div class="clear-list-button">
+        <div class="clear-list-button" *ngIf="showMoreVideo==true">
             <a [routerLink]="['/playlist',playlistInfor.id]" class="back-button">View More Videos</a>
         </div>
 

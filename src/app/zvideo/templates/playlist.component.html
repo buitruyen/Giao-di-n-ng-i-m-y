@@ -1,1 +1,7 @@
-<h3>playlist.component</h3>
+<app-elm-playlist
+        *ngIf="playlistID"
+        totalItems="100"
+        showMoreVideo="false"
+        playlistID="{{playlistID }}"
+        layout="{{ layoutDefault }}">
+</app-elm-playlist>
