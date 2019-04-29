@@ -1,24 +1,23 @@
-
 <app-elm-loader *ngIf="items.length==0 || playlistInfor == null"></app-elm-loader>
 <div class="content-panel" *ngIf="playlistInfor">
-	<!--ELEMENT PANEL TITLE-->
-	<div class="panel-title"
-		 [app-elm-panel-title]="playlistInfor.title"
-		 [layout]="layout"
-		 (myLayout)="changeLayout($event)"
-	></div>
+    <!--ELEMENT PANEL TITLE-->
+    <div class="panel-title"
+         [app-elm-panel-title]="playlistInfor.title"
+         [layout]="layout"
+         (myLayout)="changeLayout($event)"
+    ></div>
 
-	<div class="panel-block video-list {{layout}}" *ngIf="items">
-		<!--ELEMENT  VIDEO 1-->
-		<div class="item"
-			 *ngFor="let item of items"
-			 [app-elm-video]="item"
-			 show-desc="true">
-		</div>
+    <div class="panel-block video-list {{layout}}" *ngIf="items">
+        <!--ELEMENT  VIDEO 1-->
+        <div class="item"
+             *ngFor="let item of items"
+             [app-elm-video]="item"
+             show-desc="true">
+        </div>
 
-		<div class="clear-list-button">
-			<a (click)="loadMore()" class="back-button">View More Videos</a>
-		</div>
+        <div class="clear-list-button" *ngIf="showButtonLoadMore==true">
+            <a (click)="loadMore()" class="back-button">View More Videos</a>
+        </div>
 
-	</div>
+    </div>
 </div>

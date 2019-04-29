@@ -21,8 +21,12 @@ export class VideoService {
         return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO, ref => ref.limitToFirst(totalItems).orderByChild("playlistID").equalTo(playListID)).valueChanges());
     }
 
-    getItemsScrollByPlaylistID(playListID: string,limit:BehaviorSubject<number>): Observable<Video[]> {
+    getItemsScrollByPlaylistID(playListID: string, limit: BehaviorSubject<number>): Observable<Video[]> {
         return (<Observable<Video[]>>this._db.list(AppSetting.TBL_VIDEO, ref => ref.limitToFirst(limit.getValue()).orderByChild("playlistID").equalTo(playListID)).valueChanges());
+    }
+
+    getItemsLastByPlaylistID(playListID: string): Observable<Video[]> {
+        return (<Observable<Video[]>> this._db.list(AppSetting.TBL_VIDEO, ref => ref.limitToLast(1).orderByChild("playlistID").equalTo(playListID)).valueChanges());
     }
 
     getItemsByID(videoID: string): Observable<Video[]> {

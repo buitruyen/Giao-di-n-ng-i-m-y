@@ -1,6 +1,6 @@
 export class Video {
 	constructor(
-		private _$key			: string = "",
+		private _$key		: string = "",
 		private _id			: string = "",
 		private _publishedAt: string = "",
 		private _channelId	: string = "",
@@ -21,7 +21,7 @@ export class Video {
 		return new Video($key, id, publishedAt, channelId, playlistID, title, slug, description, thumbnails, views, comments, ratings, featured);
 	}
 
-	static fromJsonList( array : any ) : Video[]{	
+	static fromJsonList( array : any ) : Video[]{
 		return array.map(Video.fromJson)
 	}
 

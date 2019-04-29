@@ -42,15 +42,34 @@ export class ElmPlaylistLoadMoreComponent implements OnInit {
             (items) => {
                 this.playlistInfor = Playlist.fromJsonList(items)[0];
             });
+
+        this._videoService.getItemsLastByPlaylistID(this.playlistID).subscribe(
+            (items: Video[]) => {
+                this.lastKey = Video.fromJsonList(items)[0].id;
+            });
+
         //Videos
         this._videoService.getItemsScrollByPlaylistID(this.playlistID, this.limit).subscribe(
             (items: Video[]) => {
                 this.items = Video.fromJsonList(items);
-            });
+                if (this.items.length > 0) {
+                    if (this.items[this.items.length - 1].id === this.lastKey) {
+                        this.queryable = false;
 
+                    }
+                }
+
+            });
     }
-    loadMore(){
-        this.limit.next(this.limit.getValue() + 3);
-        this.initData();
+
+    loadMore() {
+        if (this.queryable === true) {
+            this.limit.next(this.limit.getValue() + 3);
+            this.initData();
+        } else {
+            this.showButtonLoadMore = false;
+        }
+
+
     }
 }
