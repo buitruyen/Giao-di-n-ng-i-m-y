@@ -4,6 +4,7 @@ import {AdsService} from "./services/ads.service";
 import {PlaylistService} from "./services/playlist.service";
 import {VideoService} from "./services/video.service";
 import {SafePipe} from "./pipes/safe.pipe";
+import {PagerService} from "./services/pager.service";
 
 @NgModule({
     imports: [
@@ -15,7 +16,7 @@ import {SafePipe} from "./pipes/safe.pipe";
     ],
     exports: [SafePipe],
 
-    providers: [AdsService, PlaylistService, VideoService],
+    providers: [AdsService, PlaylistService, VideoService,PagerService],
 })
 export class SharedModule {
 

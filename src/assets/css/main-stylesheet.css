@@ -2750,13 +2750,13 @@ img.aspect-px {
 }
 
 .pagination_asset .page-numbers {
-	padding: 10px 15px;
-	background-color: #fff;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.13);
+	padding: 10px 15px !important;
+	background-color: #fff !important;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.13)!important;
 	font-size: 12px;
 	color: #707070;
-	margin-bottom: 10px;
-	line-height: 16px;
+	margin-bottom: 10px !important;
+	line-height: 16px !important;
 	cursor: pointer;
 }
 
@@ -2768,10 +2768,10 @@ img.aspect-px {
 	background-color: #F7F7F7;
 }
 
-.pagination_asset .page-numbers.current {
-	background-color: #373737;
-	color: #fff;
-	font-weight: bold;
+.pagination_asset .page-numbers.current{
+	background-color: #373737 !important;
+	color: #fff !important;
+	font-weight: bold !important;
 }
 
 .widget_calendar {float: left;}

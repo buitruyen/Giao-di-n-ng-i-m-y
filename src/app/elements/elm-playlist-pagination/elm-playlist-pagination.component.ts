@@ -3,6 +3,7 @@ import {Playlist} from "../../shared/defines/playlist.class";
 import {PlaylistService} from "../../shared/services/playlist.service";
 import {VideoService} from "../../shared/services/video.service";
 import {Video} from "../../shared/defines/video.class";
+import {PagerService} from "../../shared/services/pager.service";
 
 
 @Component({
@@ -17,13 +18,16 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges {
 
     playlistInfor: Playlist = null;
     items: Video[] = [];
+    pager: any;
 
-    constructor(private _playlistService: PlaylistService, private _videoService: VideoService) {
+    constructor(private _playlistService: PlaylistService, private _videoService: VideoService, private _pagerService: PagerService) {
 
     }
 
     ngOnInit() {
         this.initData();
+        this.pager = this._pagerService.getPager(17, 2, 5);
+        console.log(this.pager);
     }
 
     changeLayout(event: any) {
