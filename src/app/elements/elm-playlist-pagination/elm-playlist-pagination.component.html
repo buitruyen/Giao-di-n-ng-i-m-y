@@ -19,6 +19,7 @@
 
 <div class="pagination_asset"
      *ngIf="pager"
+     (setCurrentPage)="setPages($event)"
      [app-elm-pager]="pager"
 >
     <!--PAGINATION-->

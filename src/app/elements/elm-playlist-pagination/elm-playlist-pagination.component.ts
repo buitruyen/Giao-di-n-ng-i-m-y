@@ -5,14 +5,14 @@ import {VideoService} from "../../shared/services/video.service";
 import {Video} from "../../shared/defines/video.class";
 import {PagerService} from "../../shared/services/pager.service";
 import {Subscription} from "rxjs";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 
 @Component({
     selector: 'app-elm-playlist-pagination',
     templateUrl: './elm-playlist-pagination.component.html'
 })
-export class ElmPlaylistPaginationComponent implements OnInit, OnChanges,OnDestroy {
+export class ElmPlaylistPaginationComponent implements OnInit, OnChanges, OnDestroy {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;
@@ -24,6 +24,7 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges,OnDestr
     pager: any;
 
     constructor(private _playlistService: PlaylistService,
+                private _routeService: Router,
                 private _activatedRouteService: ActivatedRoute,
                 private _videoService: VideoService,
                 private _pagerService: PagerService) {
@@ -61,12 +62,20 @@ export class ElmPlaylistPaginationComponent implements OnInit, OnChanges,OnDestr
                 );
 
 
-
             });
 
     }
 
     ngOnDestroy(): void {
         this.subscriptionQuery.unsubscribe();
+    }
+
+    setPages(page: number) {
+        this._routeService.navigate(['playlist', this.playlistID], {
+            queryParams: {
+                page: page
+            }
+        })
+
     }
 }
