@@ -1,4 +1,3 @@
-
 <app-elm-loader *ngIf="items.length==0 || playlistInfor == null"></app-elm-loader>
 <div class="content-panel" *ngIf="playlistInfor">
     <!--ELEMENT PANEL TITLE-->
@@ -15,10 +14,9 @@
              [app-elm-video]="item"
              show-desc="true">
         </div>
-
-        <div class="clear-list-button">
-            <a [routerLink]="['/playlist',playlistInfor.id]" class="back-button">View More Videos</a>
+        <div class="pagination_asset" app-elm-pager>
+            <!--PAGINATION-->
         </div>
-
     </div>
 </div>
+

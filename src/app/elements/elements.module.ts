@@ -23,6 +23,8 @@ import {RouterModule} from "@angular/router";
 import {ElmYoutubeIframeComponent} from "./elm-youtube-iframe/elm-youtube-iframe.component";
 import {SharedModule} from "../shared/shared.module";
 import {ElmLoaderComponent} from "./elm-loader/elm-loader.component";
+import {ElmPlaylistPaginationComponent} from "./elm-playlist-pagination/elm-playlist-pagination.component";
+import {ElmPagerComponent} from "./elm-pager/elm-pager.component";
 
 @NgModule({
     imports: [
@@ -51,7 +53,9 @@ import {ElmLoaderComponent} from "./elm-loader/elm-loader.component";
         ElmVideoComponent,
         ElmPanelTitleComponent,
         ElmYoutubeIframeComponent,
-        ElmLoaderComponent
+        ElmLoaderComponent,
+        ElmPlaylistPaginationComponent,
+        ElmPagerComponent
 
 
     ],
@@ -77,7 +81,9 @@ import {ElmLoaderComponent} from "./elm-loader/elm-loader.component";
         ElmVideoComponent,
         ElmPanelTitleComponent,
         ElmYoutubeIframeComponent,
-        ElmLoaderComponent
+        ElmLoaderComponent,
+        ElmPlaylistPaginationComponent,
+        ElmPagerComponent
     ]
 })
 export class ElementsModule {

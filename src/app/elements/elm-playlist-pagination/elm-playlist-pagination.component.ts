@@ -6,10 +6,10 @@ import {Video} from "../../shared/defines/video.class";
 
 
 @Component({
-    selector: 'app-elm-playlist',
-    templateUrl: './elm-playlist.component.html'
+    selector: 'app-elm-playlist-pagination',
+    templateUrl: './elm-playlist-pagination.component.html'
 })
-export class ElmPlaylistComponent implements OnInit, OnChanges {
+export class ElmPlaylistPaginationComponent implements OnInit, OnChanges {
     @Input('playlistID') playlistID: string;
     @Input('layout') layout: string;
     @Input('totalItems') totalItem: number = 2;

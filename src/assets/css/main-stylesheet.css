@@ -2742,14 +2742,14 @@ img.aspect-px {
 }
 
 
-.pagination {
+.pagination_asset {
 	display: block;
 	text-align: center;
 	clear: both;
 	padding-top: 10px;
 }
 
-.pagination .page-numbers {
+.pagination_asset .page-numbers {
 	padding: 10px 15px;
 	background-color: #fff;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.13);
@@ -2760,15 +2760,15 @@ img.aspect-px {
 	cursor: pointer;
 }
 
-.pagination span.page-numbers {
+.pagination_asset span.page-numbers {
 	cursor: auto;
 }
 
-.pagination .page-numbers:hover {
+.pagination_asset .page-numbers:hover {
 	background-color: #F7F7F7;
 }
 
-.pagination .page-numbers.current {
+.pagination_asset .page-numbers.current {
 	background-color: #373737;
 	color: #fff;
 	font-weight: bold;
@@ -3022,7 +3022,7 @@ img.aspect-px {
     margin-bottom: 8px;
     font-weight: bold;
 }
-#buddypress div.pagination {
+#buddypress div.pagination_asset {
     background: #f6f6f6;
 }
 #bbpress-forums ul.bbp-lead-topic,
