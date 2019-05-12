@@ -16,7 +16,7 @@
 <header>
     <div class="container">
         <div class="header-logo pull-left">
-            <a href="#"><img src="images/logo.png" alt="logo"></a>
+            <a href="#"><img src="images/logo.png" alt="logo" width="210px"></a>
         </div>
         <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
 
@@ -103,7 +103,7 @@
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
             <!-- Widget Tags -->
             <div class="widget widget-tags">
-                <h4>Tags</h4>
+                <h4>Bài viết mới nhất</h4>
                 <ul class="widget-tags-list">
                     <li class="active"><a href="#">Bài viết</a></li>
                     <li><a href="#">Video lập trình</a></li>
@@ -122,7 +122,7 @@
 
             <!-- Widget Tags -->
             <div class="widget widget-tags">
-                <h4>Tags</h4>
+                <h4>Thông tin nhanh</h4>
                 <ul class="widget-tags-list">
                     <li class="active"><a href="#">Bài viết</a></li>
                     <li><a href="#">Video lập trình</a></li>
@@ -141,7 +141,7 @@
 
             <!-- Widget Ads -->
             <div class="widget widget-ads">
-                <h4>Ads 125 x 125</h4>
+                <h4>Quảng cáo</h4>
                 <ul class="widget-ads-list">
                     <li><a href="#"><img src="images/s1.jpg" alt="images"></a></li>
                     <li><a href="#"><img src="images/s2.jpg" alt="images"></a></li>
@@ -162,8 +162,8 @@
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 footer-column">
                 <div class="widget-address">
-                    <p class="logo">
-                        <a href="#"><img src="images/logo.png" alt="logo"/></a>
+                    <p>
+                        <a href="#"><img src="images/logo.png" alt="logo" width="210px"/></a>
                     </p>
                     <p class="intro">
                         Hệ thống các bài trắc nghiệm thuộc khối tin học đại cương, tin học phổ thông (word, excel...) giúp bàn luyện rèn thêm các kỹ năng tin học, trang 1.
